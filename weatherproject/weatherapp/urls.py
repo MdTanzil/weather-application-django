@@ -15,9 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path
-from . views import HomePageView
+from . import views
 app_name = "weatherapp"
 
 urlpatterns = [
-    path('',HomePageView.as_view(),name="home")
+    path('',views.index,name="home")
 ]

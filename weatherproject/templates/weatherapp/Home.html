@@ -1,11 +1,11 @@
 {% extends 'weatherapp/base.html' %}
 {% block body %}
 <body>
-    <section class="hero is-primary">
+    <section class="text-successe bg-dark ">
         <div class="hero-body">
-            <div class="container">
+            <div class="container ">
                 <h1 class="title">
-                    What's the weather like?
+                     Weather App
                 </h1>
             </div>
         </div>
@@ -21,7 +21,7 @@
                                 {{ form.name }}
                             </div>
                             <div class="control">
-                                <button type="submit" class="button is-info">
+                                <button type="submit" class="button btn-success">
                                     Add City
                                 </button>
                             </div>
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
-                    
+                    {% for city_weather in weather_data %}
                     <div class="box">
                         <article class="media">
                             <div class="media-left">
@@ -49,13 +49,13 @@
                                         <span class="title">{{ city_weather.city }}</span>
                                         <br>
                                         <span class="subtitle">{{ city_weather.temperature }}° F</span>
-                                        <br> 
+                                        <br> {{ city_weather.description }}
                                     </p>
                                 </div>
                             </div>
                         </article>
                     </div>
-                    {
+                    {% endfor %}
                 </div>
             </div>
         </div>
